@@ -1,0 +1,8 @@
+git init
+git add .
+git commit -m 'message'
+git remote add origin 'https://github.com/nguyenrobot/Traffic-Sign-Recognition-with-Keras-Tensorflow.git'
+git pull --rebase origin main
+git lfs push --all origin main
+git push -u origin main
+git push origin main
