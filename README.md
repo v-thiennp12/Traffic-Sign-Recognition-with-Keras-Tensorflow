@@ -17,8 +17,10 @@ https://github.com/nguyenrobot
 https://www.nguyenrobot.com  
 
 *Current github repos*  
+https://github.com/nguyenrobot/Traffic-Sign-Recognition-with-Keras-Tensorflow  
 
-*Medium*
+*Medium article*
+https://nguyenrobot.medium.com/build-a-traffic-sign-recognition-with-keras-tensorflow-7c01f093f3df  
 
 *Jupyter notebooks*  
 traffic_sign_classifier_LeNet.ipynb  
@@ -351,7 +353,6 @@ Interestingly, the classifier is more fitted with the training dataset but it's 
 Trying to remediate HLS overffiting issue, I applied a convolutional layer at size(1,1) just the HLS input. This convolutional layer at size(1,1) works very similar to gray-scale transform, it take HLS information of each pixel then combine them to get just one-channel information.  
 *Convolutional filter at size 1x1 &#8595;*  
 <img src="figures/HLS_ft_Conv_1x1.png" alt="Drawing" style="width: 250px;"/>
-
 
 *HLS_ft_Conv_1x1 vs Y(UV) in classification accuracy &#8595;*  
 <img src="figures/accuracy_LeNet_HLS_ft_Conv_1x1.png" alt="Drawing" style="width: 750px;"/>
