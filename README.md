@@ -27,9 +27,9 @@ traffic_sign_classifier_LeNet.ipynb
 traffic_sign_classifier_GoogLeNet.ipynb  
 traffic_sign_classifier_ResNet.ipynb  
 
-`Keras` : in Tensorlfow 2, Keras is the official high-level API that help beginners start more quickly and concentrate in model architecture than dealing with low-level APIs
+`Keras` : in Tensorlfow 2, Keras is the official high-level API that helps beginners start more quickly and concentrate on model architecture than dealing with low-level APIs
 
-In the end, we will also try to classify some traffic signs taken on french road :  
+In the end, we will also try to classify some traffic signs taken on french roads :  
 *Traffic signs to classsify &#8595;*  
 <img src="figures/french_sign_compare_german_INI.jpg" alt="Drawing" style="width: 750px;"/>
 
@@ -42,11 +42,11 @@ We will re-build some famous deep neural networks in this tutorial :
 * GoogLeNet by Google team, the winner of ILSVRS 2014 challenged
 * ResNet34, a lite version of Resnet50 by Microsoft team, the winner of ILSVRS 2015 challenged  
 
-The first idea of artificial neural networks came from Warren McCulloch - a neurophysiologist, and Walter Pitts - a logician, in 1943. But it takes many years later to see their real-time applications in our daily life.  There are some important factors could be listed here with honor :  
-- [x] GPU, thank to gaming industry ^_^ that GPU get more powerful and cheaper. GPU is designed to work well with matrix operations and parallel instruction that help artificial neural networks learn faster than on a CPU  
-- [x] Data : when talking about artificial, we talk about data. The internet get our world flatter and ease the data collection phase (it's both negative and positive !), also the data exchange  
+The first idea of artificial neural networks came from Warren McCulloch - a neurophysiologist, and Walter Pitts - a logician, in 1943. But it takes many years later to see their real-time applications in our daily life.  Some important factors could be listed here with honour:  
+- [x] GPU, thank gaming industry ^_^ that GPU gets more powerful and cheaper. GPU is designed to work well with matrix operations and parallel instruction that help artificial neural networks learn faster than on a CPU  
+- [x] Data : when talking about artificial, we talk about data. The internet gets our world flatter and eases the data collection phase (it's both negative and positive !), also the data exchange  
 - [x] Memory (Disk + RAM + Cloud) : data need to be stored. Memory gets faster, cheaper with an incredible speed that helps artificial intelligence developments progress  
-- [x] Researchers and opensource community : nowadays, we can build a pretrained state-of-the-art neural network by typing roughly 15 lines of code. It's a fruit of many year of works and researches of academic, industrial and opensource community  
+- [x] Researchers and opensource community : nowadays, we can build a pre-trained state-of-the-art neural network by typing roughly 15 lines of code. It's a fruit of many years of works and researches of academic, industrial and opensource community  
 - [x] LeNet  by Yann LeCun, a simple architecture but robust that inspire modern architectures as AlexNet (2012), GoogLeNet/Inception (2014), ResNet (2015).  
 
 ...
@@ -62,10 +62,10 @@ It's not easy to resume near 80 years (to 2020) of deep-learning evolution and e
 `remark :` an image classifier takes an input image then predict if it belongs to a defined class. A classifier doesn't scan input image and find/localize objects inside. I will have another tutorial on object detection (aka. classifying and localization) in the future.  
 
 ## Key notions of supervised deep Learning
-We will talk about some key notions of `supervised` deep learning which the model is trained with pre-labeled datasets.  
-`remark :` I try to figure out abstract and complicated notions of deep learning by using simplified and abusive language, sometimes it's not the standard acedemic notion   
+We will talk about some key notions of `supervised` deep learning which the model is trained with pre-labelled datasets.  
+`remark :` I try to figure out abstract and complicated notions of deep learning by using simplified and abusive language, sometimes it's not the standard academic notion   
 #### 1. Convolutional filter  
-Convolutional filter is omnipresent in deep learning, it's a key element for feature extraction from an input.  
+The convolutional filter is omnipresent in deep learning, it's a key element for feature extraction from an input.  
 A basic convolutional filter that we may have seen many times is Sobel operator which helps us to calculate 1st degree derivative on grayscale image :
 
 *Sobel operator in x-direction &#8595;*  
@@ -73,16 +73,16 @@ A basic convolutional filter that we may have seen many times is Sobel operator 
 
 >Source : [OpenCV Documentation](https://docs.opencv.org/3.4/d2/d2c/tutorial_sobel_derivatives.html)
 
-In deep learning, convolutional filters are randomly initialized at the beginning then gradually get updated thank to back-propagation algorithms in training phase.  
+In deep learning, convolutional filters are randomly initialized at the beginning then gradually get updated thank to back-propagation algorithms in the training phase.  
 
-Please check my previous tutorial for Sobel and it's application in line-detection here :
+Please check my previous tutorial for Sobel and its applications in line-detection here :
 https://github.com/nguyenrobot/lane_detection_advanced_sliding_windows
 
 #### 2. Neurons in neural networks
 A neural network could be considered as a weighted multi-voting system where each neuron takes votes from previous’ layer’s neurons or from the inputs.  
-<Every neuron is not equal !>, neural network is not a democratic country. Every vote is weighted.   
+<Every neuron is not equal !>, the neural network is not a democratic country. Every vote is weighted.   
 
-Normally, neurons' outputs of the last layer  is called ‘logits’. In abusive language, we could also call every neuron’s output as logit. An output of a neuron is very similar to a fuzzy logic output. So, what logit stands for ?  
+Normally, neurons' outputs of the last layer is called ‘logits’. In abusive language, we could also call every neuron’s output as logit. An output of a neuron is very similar to a fuzzy logic output. So, what logit stands for ?  
 _logit = 0 : white vote or blank vote, aka. ‘no comment’  
 _logit > 0 : YES answer, higher the logit the neuron is more sure about its ‘YES’   conclusion  
 _logit < 0 : NO answer, lower the logit the neuron is more sure about its ‘NO’ conclusion  
@@ -92,18 +92,18 @@ _logit < 0 : NO answer, lower the logit the neuron is more sure about its ‘NO�
 
 >Source : nguyenrobot
 
-Why called deep learning ? When a neural network has many hidden (intermediate) layer, it's called deep neural network (DNN). Usually, end-user don't need to see intermediate layers results, so for them it's somekind of blackbox, or deep learning.  
+Why called deep-learning ? When a neural network has many hidden (intermediate) layer, it's called deep neural network (DNN). Usually, end-user doesn't need to see intermediate layers results, so for them, it's some kind of black-box or deep learning.  
 
 #### 3. Softmax activation
-Softmax acivation function is frequently used in multi-classes classifying in the last layer.  
-Without softmax activation, we get logits at the outputs of a neural network which show us the degree of similarity of the input with each pre-labeled classes.  
+Softmax activation function is frequently used in multi-classes classifying in the last layer.  
+Without softmax activation, we get logits at the outputs of a neural network which show us the degree of similarity of the input with each pre-labelled classes.  
 
 *Wihout softmax activation &#8595;*  
 <img src="figures/softmax_without.png" alt="Drawing" style="width: 350px;"/>
 
 >Source : nguyenrobot
 
-However, logits are very abstract we need to convert them to probabilites summing up to 1. So, the softmax activation is here to figure out probabilites that the input could be belong to a class.  
+However, logits are very abstract we need to convert them to probabilities summing up to 1. So, the softmax activation is here to figure out probabilities that the input could belong to a class.  
 
 *Softmax activation & probabilities &#8595;*  
 <img src="figures/softmax_with.png" alt="Drawing" style="width: 550px;"/>
@@ -111,7 +111,7 @@ However, logits are very abstract we need to convert them to probabilites summin
 >Source : nguyenrobot
 
 #### 4. ReLU activation function  
-The ReLU activation function is widely used in deep learning. ReLU get passed ‘YES’ anwser of a neuron and neutralize other types of anwser.  
+The ReLU activation function is widely used in deep learning. ReLU gets passed ‘YES’ answer of a neuron and neutralize other types of answer.  
 The ReLu actionvation is really simple defined as : f(x)=max(0,x)  
 
 *ReLU activation function definition &#8595;*  
@@ -119,11 +119,11 @@ The ReLu actionvation is really simple defined as : f(x)=max(0,x)
 
 >Source : [analyticsvidhya](https://www.analyticsvidhya.com/blog/2020/01/fundamentals-deep-learning-activation-functions-when-to-use-them)
 
-ReLU help the Model to have :  
+ReLU helps the Model to have :  
 [x] Non linear behaviour & Multi-classes classification capacity
-*Imagine that we have a group A of neurons evaluating the input if it's belong to class 1 and a groupB of neurons evaluating the input if it's belong to class 2. The ReLu activation function helps to cut the link between group A of neurons to class 2 evaluation and vice-versa. So when group A gives 'NO' anwser for an input, it's 'NO' answer doesn't affect the evaluation process of group B of neurons*  
+*Imagine that we have a group A of neurons evaluating the input if it belongs to class 1 and a group B of neurons evaluating the input if it belongs to class 2. The ReLu activation function helps to cut the link between group A of neurons to class 2 evaluation and vice-versa. So when group A gives 'NO' answer for an input, its 'NO' answer doesn't affect the evaluation process of group B of neurons*  
 
-[x] Faster convergence, aka. ease the back-propagation in training phas
+[x] Faster convergence, aka. ease the back-propagation in the training phase
 *After each new training input, only neurons giving 'YES' answer get updated*  
 
 *ReLU activation in action &#8595;*  
@@ -131,17 +131,17 @@ ReLU help the Model to have :
 
 >Source : nguyenrobot
 
-Sometime, Leaky ReLU is used to do not completely cut the link between groups of neurons beucause in pratice, neurons' groups are not compelely independent grouped into A, B, C.. groups for the classifying process.    
+Sometimes, Leaky ReLU is used to do not completely cut the link between groups of neurons because in practice, neurons' groups are not completely independent grouped into A, B, C.. groups for the classifying process.    
 
 #### 4. Human vs deep learning in computer vision  
-When human does computer vision, we start by picking some well known operations, then we define thresholds and logical formulas to get the output.  
+When human does computer vision, we start by picking some well-known operations, then we define thresholds and logical formulas to get the output.  
 *Human does computer vision &#8595;*  
 <img src="figures/human_CV.png" alt="Drawing" style="width: 550px;"/>
 
 >Source : nguyenrobot
 
-With Deep Learning, human firstly chooses an architecture then all the parameters are randomly initialized in the begining of the training phase.  
-As an example in computer vision, the input is a vector of all pixel called X, the outputis a vector of logits corresponding to classes called Z. The vector of labels is Y (1 0 0.. if current image is belong to class 1).  
+With Deep Learning, human firstly chooses an architecture then all the parameters are randomly initialized in the beginning of the training phase.  
+As an example in computer vision, the input is a vector of all pixel called X, the output is a vector of logits corresponding to classes called Z. The vector of labels is Y (1 0 0.. if the current image belongs to class 1).  
 
 *Deep learning does computer vision &#8595;*  
 <img src="figures/deep_CV.png" alt="Drawing" style="width: 550px;"/>
@@ -153,11 +153,11 @@ As an example in computer vision, the input is a vector of all pixel called X, t
 
 >Source : nguyenrobot
 
-Gradient Descent is the mostly used method to get Neural Networks updated during training phase.  
+Gradient Descent is the most used method to get Neural Networks updated during the training phase.  
 *In predicting phase :  
 [x] z = f(X,P)  
-[x] P are randomly initialized in the begining then get gradually updated in training phase when we inject new images.  
-f(X,P) is roughly a huge matrix calculation from inut vector X and all traineable paramteter P of the Neural Network (neurons' weights & convolutional filters' weights)
+[x] P are randomly initialized in the beginning then get gradually updated in training phase when we inject new images.  
+f(X,P) is roughly a huge matrix calculation from input vector X and all trainable parameters P of the Neural Network (neurons' weights & convolutional filters' weights)
 
 *In back-propagation phase :  
 [x] E = Y -Z : error or Cross Entropy Loss  
@@ -185,7 +185,7 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 <img src="figures/samples_count.jpg" alt="Drawing" style="width: 600px;"/>  
 Source : INI German dataset
 
-It's natural that for traffic signs that could engender confusion - even for human, their numbers of samples are much more higher than others.
+It's natural that for traffic signs that could engender confusion - even for a human, their numbers of samples are much higher than others.
 >*Confusion matrix, Image Credit : German Traffic Signs Dataset from INI &#8595;*  
 <img src="figures/confusion_matrix_dataset.png" alt="Drawing" style="width: 550px;"/>  
 Source : http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset
@@ -193,13 +193,13 @@ Source : http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset
 ## Design and Test a Model Architecture
 #### 1. Image preprocessing
 ##### Color-Space
-Pierre Sermanet and Yann LeCun used YUV color space with almost of processings on Y-channel (Y stands for brightness, U and V stand for Chrominance). Many other works in computer vision also relay on gray-scale because human can naturally classifier object in black and white, a frame in gray-scale could save memory and keep easier for normalization phase in data pre-processing.  
-I will follow this tradition for my first attemps then will try in HSL color space in the end. I think that we lost information in grayscale, so I hope that using HSL color space help us to have intuitively the perception of Hue, Saturation and Lightness in some cases it could improve the final accuracy and prevent confusions. Of course, we have to sacrifice the performance and memory consumption in training phase and then speed in prediction phase.  
+Pierre Sermanet and Yann LeCun used YUV color-space with almost of processings on Y-channel (Y stands for brightness, U and V stand for Chrominance). Many other works in computer vision also relay on gray-scale because a human can naturally classify objects in black and white, a frame in gray-scale could save memory and keep easier for normalization phase in data pre-processing.  
+I will follow this tradition for my first attempts then will try in HSL color-space in the end. I think that we lost information in grayscale, so I hope that using HSL color-space helps us to have intuitively the perception of Hue, Saturation and Lightness in some cases it could improve the final accuracy and prevent confusions. Of course, we have to sacrifice the performance and memory consumption in the training phase and then speed in the prediction phase.  
 
 ##### Normalization
-Generally, we normalize data to get them center around 0 and to have standard deviation near to 1.
+Generally, we normalize data to get them centre around 0 and to have standard deviation near to 1.
 - [x] to prevent numerical errors due to many steps of matrix operation. Imagine that we have 255x255x255x255xk operation, it could give a huge numerical error if we just have a small error in k.  
-- [x] to help to training phase converges more quickly by forcing inputs to have similar mean and deviation
+- [x] to help the training phase converges more quickly by forcing inputs to have similar mean and deviation
 
 #### 2. Model architecture
 
@@ -225,21 +225,21 @@ The original LeNet is used for hand-writing digits classification which does hav
 
 #### 3. Train the model
 
-`Batch size` : I prefer to use batch size at 32. ["Friends dont let friends use minibatches larger than 32."](https://twitter.com/ylecun/status/989610208497360896?s=20) Yann Lecun tweeted. With Tensorflow backend and OpenCV for image preprocessing, we wouldn't have GPU memory with big batch size. However, on a 2GB memory dedicated GPU card and using Pytorch library, we would have memory problems.  
-`Number of epochs` : 30 epochs is suffisant for small-scale dataset. Skip-layer connection as in Residual Network could helps training phase converge quickly.  
+`Batch size` : I prefer to use batch size at 32. ["Friends don't let friends use mini-batches larger than 32."](https://twitter.com/ylecun/status/989610208497360896?s=20) Yann Lecun tweeted. With Tensorflow backend and OpenCV for image preprocessing, we wouldn't have GPU memory with big batch size. However, on a 2GB memory dedicated GPU card and using Pytorch library, we would have memory problems.  
+`Number of epochs` : 30 epochs is sufficient for small-scale datasets. Skip-layer connection as in Residual Network could help the training phase converge quickly.  
 `Optimizer` : SGD, Adam, Nadam  
 `Learning rate` : 0.001 is prefered
 
 #### 4. Data augmentation
-Keras disposes a data augmentation API that helps us to enrich our training dataset. Usually, we enhance our training dataset with geometric transform to reply to various inputs.  
+Keras disposes of a data augmentation API that helps us to enrich our training dataset. Usually, we enhance our training dataset with geometric transforms to reply to various inputs.  
 Here is an example of augmented input :  
 *Data augmentation, example for a 60kmph limit sign &#8595;*  
 <img src="figures/data_augmentation_ex.jpg" alt="Drawing" style="width: 650px;"/>
 
 >Source : nguyenrobot
 
-## Test the model on validation dataset & on test dataset
-Normally, we can use 1/3 of our labeld dataset for cross-validation.  
+## Test the model on validation dataset & the test dataset
+Normally, we can use 1/3 of our labelled dataset for cross-validation.  
 -[x] Our validation dataset is pre-prepared with 4410 samples.  
 -[x] Our test dataset is pre-prepared with 12630 samples.  
 
@@ -248,12 +248,12 @@ Normally, we can use 1/3 of our labeld dataset for cross-validation.
 
 >Source : nguyenrobot
 
-We need to get 93-95% of validation accuracy at least to be considered as a robust classifier. With `LeNet`, `GoogLeNet` and `ResNet` original architecutures, we nearly achieve the objective.  
+We need to get 93-95% of validation accuracy at least to be considered as a robust classifier. With `LeNet`, `GoogLeNet` and `ResNet` original architectures, we nearly achieve the objective.  
 `LeNet` :  originally, LeNet architecture is invented for handwritten-numbers recognition, it's not perfectly adapt for traffic signs classification  
 
-`GoogLeNet` and `ResNet` :  originally, they are used for image classifcation of 224x224 pixels, it's not perfectly adapt for our traffic signs classification at 32x32 pixels  
+`GoogLeNet` and `ResNet` :  originally, they are used for image classification of 224x224 pixels, it's not perfectly adapt for our traffic signs classification at 32x32 pixels  
 
-Thank to confusion matrix, we could identify whether to enhance :  
+Thank confusion matrix, we could identify whether to enhance :  
 -[x] training dataset  
 -[x] real-time data augmentation  
 -[x] preprocessing method  
@@ -281,8 +281,8 @@ Here are some French traffic signs that I filmed on roads.
 *German traffic signs from INI dataset, in stardard form &#8595;*  
 <img src="figures/german_sign.jpg" alt="Drawing" style="width: 500px;"/>
 
-#### 2. Somes common french traffic signs are not present in INI German traffic signs dataset or differed
-Whatever our input - evenif it's not present in the training dataset, by using softmax activation our classififer can not say that 'this is a new traffic sign that it doesn't recognize', it's just try to find class that probably most suitable for the input (sum of probability across all classes is 1).  
+#### 2. Some common french traffic signs are not present in INI German traffic signs dataset or differed
+Whatever our input - even if it's not present in the training dataset, by using softmax activation our classifier can not say that 'this is a new traffic sign that it doesn't recognize', it's just trying to find a class that probably most suitable for the input (sum of probability across all classes is 1).  
 
 When a sign doesn't be present in our training dataset, we'll try to find a 'similar' class to label it as :  
 
@@ -298,22 +298,22 @@ image 14 : 'class 2', 90kmh speed-limit not existed
 
 #### 3. Softmax probabilities for prediction
 *in case that we use softmax activation at the last layer  
-If we use softmax activation in the last layer, it's very convinient to get directly the porbabilties that an input image could belong to each class. However, when input image is a not belong to any class, the prediction is totally wrong ! There will be always a class that the input should be in, for the classifier.  
+If we use softmax activation in the last layer, it's very convenient to get directly the probabilities that an input image could belong to each class. However, when the input image does not belong to any class, the prediction is totally wrong ! There will be always a class that the input should be in, for the classifier.  
 
 *Visualization of softmax probabilities &#8595;*  
 <img src="figures/french_sign_softmax_visuali_resnet34.jpg" alt="Drawing" style="width: 750px;"/>
 
 *in case that we don't use softmax activation at the last layer  
-If we don't use softmax activation in the last layer, e will get 'logits' at the ouput for each class. 'logits' are very abstract but then we can add a seperated softmax calculation to see the probabilities. Thank to 'logits', if they are all negative we can conlure that the input image is not belong to any class in training dataset.  
+If we don't use softmax activation in the last layer, e will get 'logits' at the output for each class. 'logits' are very abstract but then we can add a separated softmax calculation to see the probabilities. Thank to 'logits', if they are all negative we can conclude that the input image does not belong to any class in the training dataset.  
 
-Here is an example of output logits for a totally strange image, the calssifier can not recognize it in any class of training dataset, so all of output logits are negative.  
+Here is an example of output logits for a totally strange image, the classifier can not recognize it in any class of training dataset, so all of the outputs' logits are negative.  
 *Visualization of logits for a strange input image &#8595;*  
 <img src="figures/prediction.png" alt="Drawing" style="width: 650px;"/>
 
 ## Enhancements
 #### 1. Enhancements in model architecture
 *skip-connections ft. convolutional filter of layer's size 
-Taking the idea of skip connections in Residual Units of ResNet architecture, I created full size convolutional filters at each stage of my neural network then inject them to a concatenation layer before the final fully connected layer.  
+Taking the idea of skip connections in Residual Units of ResNet architecture, I created full-size convolutional filters at each stage of my neural network then inject them to a concatenation layer before the final fully-connected layer.  
 
 *LeNet ft. skip-connections & full convoluional filter &#8595;*  
 <img src="figures/archi_LeNet_improved.png" alt="Drawing" style="width: 350px;"/>
@@ -330,7 +330,7 @@ Taking the idea of skip connections in Residual Units of ResNet architecture, I 
 
 >Source : nguyenrobot
 
-The prediction accuracy is sharply improved with this tweak. At each stage of the neural network, we dispose a certain level of information. The fact to concatenate all levels of details in the final layer helps us to harmonize global features and local features of input image.  
+The prediction accuracy is sharply improved with this tweak. At each stage of the neural network, we dispose of a certain level of information. The fact to concatenate all levels of details in the final layer helps us to harmonize global features and local features of an input image.  
 
 *Prediction accuracy of improved architectures &#8595;*  
 <img src="figures/accuracy_improved.png" alt="Drawing" style="width: 750px;"/>
@@ -350,7 +350,7 @@ Interestingly, the classifier is more fitted with the training dataset but it's 
 <img src="figures/accuracy_LeNet_HLS.png" alt="Drawing" style="width: 550px;"/>
 
 *Convolutional filter at size 1x1  
-Trying to remediate HLS overffiting issue, I applied a convolutional layer at size(1,1) just the HLS input. This convolutional layer at size(1,1) works very similar to gray-scale transform, it take HLS information of each pixel then combine them to get just one-channel information.  
+Trying to remediate HLS overfitting issue, I applied a convolutional layer at size(1,1) just the HLS input. This convolutional layer at size(1,1) works very similarly to gray-scale transform, it takes HLS information of each pixel then combine them to get just one-channel information.  
 *Convolutional filter at size 1x1 &#8595;*  
 <img src="figures/HLS_ft_Conv_1x1.png" alt="Drawing" style="width: 250px;"/>
 
@@ -359,13 +359,13 @@ Trying to remediate HLS overffiting issue, I applied a convolutional layer at si
 
 >Source : nguyenrobot
 
-In contrary with my intention, the model is even more over-fitted so the classication accuracy on test dataset dramatically falls from 95,7% to 40% !  
+In contrary to my intention, the model is even more over-fitted so the classification accuracy on test dataset dramatically falls from 95,7% to 40% !  
 
-So for classification problems, we understand that why in the orginal paper of [LeNet architecture](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), the authors only used Y channel from YUV color-space.  
+So for classification problems, we understand that why in the original paper of [LeNet architecture](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), the authors only used Y channel from YUV color-space.  
 `More information sometimes is bad for deep-learning !`  
 
-#### 3. Enhancements in training dataset
-Intriggerd by the question `what if we use soft activation in the last layer to get directly probabilites but also to keep the classifier classify well new instance images that are not belong to any classes in training dataset`, I tried to add special images to the training dataset.  
+#### 3. Enhancements in the training dataset
+Intrigued by the question `what if we use soft activation in the last layer to get directly probabilities but also to keep the classifier classify well new instance images that do not belong to any classes in training dataset`, I tried to add special images to the training dataset.  
 
 *Special signs added to the training dataset &#8595;*  
 <img src="figures/enhanced_training_dataset_text.png" alt="Drawing" style="width: 350px;"/>
@@ -374,22 +374,22 @@ Intriggerd by the question `what if we use soft activation in the last layer to 
 
 >Source : nguyenrobot
 
-However, theses enhancements don't give any better outcome.  
+However, these enhancements don't give any better outcome.  
 
 ## Visualization of layers
-The depth (number of feature-maps) of each layer is one of most important hyper-parameter for an architecture.  
+The depth (number of feature-maps) of each layer is one of the most important hyper-parameter for an architecture.  
 -[x] A layer not deep enough couldn't extract enough details  
 -[x] A layer too deep could get the model overfitted  
 -[x] A layer too deep get the training and prediction processes slow and resources-consuming  
 
-In deep learning, there is no perfect model. For each problem, we need to tweak, train and tweak, again and again to get a good enough model.  
+In deep learning, there is no perfect model. For each problem, we need to tweak, train and tweak, again and again, to get a good enough model.  
 
 *Visualization of some layers &#8595;*  
 <img src="figures/visualization_layer.png" alt="Drawing" style="width: 750px;"/>
 
 >Source : nguyenrobot
 
-A simple visualization could help us to see if a layer ecxtracts enough details or not then we can ajust their depth.  
+A simple visualization could help us to see if a layer extracts enough details or not then we can adjust their depth.  
 
 # Wrapping up
 **-[x] Jupyter notebooks listing**  
@@ -416,7 +416,7 @@ traffic_sign_classifier_LeNet_HSL_ft_Conv_f1x1.ipynb
 traffic_sign_classifier_ResNet_HSL_ft_Conv_f1x1.ipynb  
 
 **-[x] Object detection tutorial**  
-I will work on another tutorial for object detection and localization, please tay tuned and follow my linkedin or my medium or my github for updates.  
+I will work on another tutorial for object detection and localization, please stay tuned and follow my linkedin or my medium or my github for updates.  
 
 Linkedin __| linkedin.com/in/phuc-thien-nguyen  
 
